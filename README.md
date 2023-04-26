@@ -1,4 +1,5 @@
 # Fantano Recommender
+![alt-text](app.gif)
 
 This is a Flask app that recommends music albums based on user input. It uses the MiniLM-L6-v2 model from SentenceTransformers to calculate cosine similarity between the user input and album reviews. The app then returns the top 10 most similar albums.
 
