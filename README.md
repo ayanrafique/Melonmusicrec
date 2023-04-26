@@ -1,21 +1,25 @@
-Melon Music Recommender
+# Fantano Recommender
 
-Melon Music Recommender is a Flask web application that recommends music based on user's input text by finding cosine similarity between the input text and embeddings from Anthony Fantano's YouTube music review videos.
+This is a Flask app that recommends music albums based on user input. It uses the MiniLM-L6-v2 model from SentenceTransformers to calculate cosine similarity between the user input and album reviews. The app then returns the top 10 most similar albums.
 
-Getting Started
+## Installation
 
-These instructions will help you set up the project on your local machine for development and testing purposes.
+Run the app using `python melonmusicrec.py`
 
-Prerequisites
+## Usage
 
-To run this project, you need to have the following installed on your local machine:
+1. Enter a sentence or phrase that describes the type of music you want to listen to.
+2. Click the "Get Recommendations" button.
+3. The app will return the top 10 most similar albums.
 
-Start the Flask web server by running the following command in your terminal:
+## Libraries Used
 
-python fantanorec.py
+- pandas
+- numpy
+- Flask
+- SentenceTransformers
+- sklearn
 
-Open your web browser and navigate to the following address:
+## Acknowledgements
 
-http://127.0.0.1:5000/
-
-You should now see the Melon Music Recommender web application.
+This app was inspired by the music reviews of Anthony Fantano, aka The Needle Drop.

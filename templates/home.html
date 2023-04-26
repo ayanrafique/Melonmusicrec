@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <title>Melon Music Recommender</title>
+  </head>
+  <body>
+    <h1>Melon Music Recommender</h1>
+    <form action="/" method="post">
+      <label for="user_input">Describe what you want to listen to:</label><br>
+      <textarea name="user_input" id="user_input" rows="4" cols="50"></textarea><br>
+      <input type="submit" value="Get Recommendations">
+    </form>
+    {% if recommendations %}
+    <h1>Recommendations</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Score</th>
+        <th>Album Cover</th>
+        <th>Spotify Player</th>
+      </tr>
+      {% for recommendation in recommendations %}
+        <tr>
+          <td>{{ recommendation.title }}</td>
+          <td>{{ recommendation.artist }}</td>
+          <td>{{ recommendation.score }}</td>
+          <td><img src="{{ recommendation.album_cover_url }}" width="200" height="200" alt="{{ recommendation.title }} - {{ recommendation.artist }}"></td>
+          <td><iframe src="{{ recommendation.embed_url }}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+  </body>
+</html>
